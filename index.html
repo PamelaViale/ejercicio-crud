@@ -1,11 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRUD Productos</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 </head>
 <body>
-    
+  <section class="section">
+    <div class="container">
+      <h1 class="title has-text-centered">CRUD Productos</h1>
+
+      <button class="button is-primary mb-4" id="btn-abrir-form">Agregar Producto</button>
+
+      <!-- Formulario -->
+      <form id="form-producto" class="box" style="display:none;">
+        <input type="hidden" id="producto-id">
+        <div class="field">
+          <label class="label">Nombre</label>
+          <div class="control">
+            <input class="input" type="text" id="nombre" required>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Precio</label>
+          <div class="control">
+            <input class="input" type="number" id="precio" required>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Imagen (URL)</label>
+          <div class="control">
+            <input class="input" type="url" id="imagen">
+          </div>
+        </div>
+        <div class="field is-grouped">
+          <div class="control">
+            <button class="button is-success" type="submit" id="btn-guardar">Guardar</button>
+          </div>
+          <div class="control">
+            <button class="button is-light" type="button" id="btn-cancelar">Cancelar</button>
+          </div>
+        </div>
+      </form>
+
+      <!-- Tabla -->
+      <table class="table is-striped is-fullwidth">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Imagen</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="tabla-productos"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <script src="app.js"></script>
 </body>
 </html>
